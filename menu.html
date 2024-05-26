@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+</head>
+<body>
+  <style>
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+    }
+    #cancel-button {
+        margin-right: auto;
+    }
+    #next-button {
+        margin-left: auto;
+    }
+  </style>
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">profESIME</a>
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <button id="next-button" type="button" class="btn btn-primary" onclick="window.location.href='index.html';">Cerrar sesión</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div>
+      <h1><center>Escuela Superior de Ingeniería</center></h1>
+      <h1><center>Mecánica y Eléctrica</center></h1>
+      <br>
+      <h1><center>Ingeniería en computación</center></h1>
+      <br>
+      <h1><center>Eliga una de las dos opciones disponibles para</center></h1>
+      <h1><center>realizar tu búsqueda.</center></h1>
+    </div>
+    <center>
+      <div>
+        <h1><label for="exampleSelect1" class="form-label mt-4">Selecciona una opción:</label></h1>
+        <select class="form-select" id="exampleSelect1">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+    </center>
+    <br>
+    <br>
+    <br>
+    <div class="button-container">
+      <button id="cancel-button" type="button" class="btn btn-primary" onclick="window.location.href='docentes.html';">Docentes</button>
+      <button id="next-button" type="button" class="btn btn-primary" onclick="window.location.href='materias.html';">Materias</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Replica - Ejemplo de edición de comentarios</title>
+  <style>
+    /* Estilos CSS para Replica */
+    .replica {
+      margin-bottom: 20px;
+    }
+
+    .replica__area-texto {
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      resize: vertical;
+    }
+
+    .replica__boton {
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+
+    .replica__fecha-creacion {
+      font-size: 0.8em;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="replica">
+    <div class="replica__area-texto">Ejemplo de comentario con botón dentro (haga clic para editar)</div>
+    <button class="replica__boton" data-replica-id="1" style="margin-left: 10px;">Modificar comentario</button>
+    <div class="replica__fecha-creacion">2024-05-22 16:22:00</div>
+  </div>
+
+  <div class="replica">
+    <div class="replica__area-texto">Este es un comentario más largo que muestra cómo se envuelve el texto en el área de texto, y también tiene el botón dentro (haga clic para editar).</div>
+    <button class="replica__boton" data-replica-id="2" style="margin-left: 10px;">Modificar comentario</button>
+    <div class="replica__fecha-creacion">2024-05-22 16:25:00</div>
+  </div>
+
+  <script>
+    // JavaScript para manejar la edición de comentarios
+    const botonesModificar = document.querySelectorAll('.replica__boton');
+
+    botonesModificar.forEach(boton => {
+      boton.addEventListener('click', () => {
+        const replicaId = boton.dataset.replicaId;
+        const areaTexto = document.querySelector(`.replica[data-replica-id="${replicaId}"] .replica__area-texto`);
+
+        // Abrir el área de texto para la edición
+        areaTexto.focus();
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+

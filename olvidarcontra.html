@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar contraseña</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+</head>
+<body>
+    <style>
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        #cancel-button {
+            margin-right: auto;
+        }
+        #next-button {
+            margin-left: auto;
+        }
+      </style>
+        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">profESIME</a>
+                  <span class="visually-hidden">(current)</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <h1><center>Recuperación de contraseña</center></h1>
+        <div><center>
+            <div>
+                <label for="exampleInputEmail1" class="form-label mt-4">Correo Institucional</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+        </center></div>
+        <br>
+        <br>
+        <br>
+        <div class="button-container">
+            <button id="cancel-button" type="button" class="btn btn-primary" onclick="window.location.href='index.html';">Cancelar</button>
+            <button id="next-button" type="button" class="btn btn-primary" onclick="window.location.href='index.html';">Recuperar</button>
+        </div>
+        <script>
+          /*function recoverPassword() {
+              const email = document.getElementById('email').value;
+              fetch('http://localhost:3000/recover_password', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({ email: email })
+              })
+              .then(response => response.json())
+              .then(data => {
+                  if (data.success) {
+                      alert('Se ha enviado un correo con tu contraseña.');
+                  } else {
+                      alert('Error: ' + data.message);
+                  }
+              })
+              .catch(error => {
+                  console.error('Error:', error);
+                  alert('Hubo un error al intentar recuperar la contraseña.');
+              });
+          }*/
+      </script>
+</body>
+</html>

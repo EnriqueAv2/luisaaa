@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+</head>
+<body>
+    <style>
+        table {
+            width: 300px; 
+            border-collapse: collapse;
+            text-align: center;
+        }
+        td {
+            padding: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            resize: vertical;
+        }
+        button {
+            padding: 5px 10px;
+        }
+    </style>
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">profESIME</a>
+                <span class="visually-hidden">(current)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <h2><center>Docentes</center></h2>
+    <button id="next-button" type="button" class="btn btn-primary" onclick="window.location.href='menu.html';">Menú</button>
+        <table class="table table-hover">
+            <tr>
+                <td>Buscar:</td>
+                <td><input type="text" id="searchText" /></td>
+                <td><button id="busqueddoc" type="button" class="btn btn-primary"performSearch()" onclick="window.location.href='perfildocente.html';">Búsqueda</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><textarea id="searchResults"></textarea></td>
+                <td></td>
+            </tr>
+        </table>
+</body>
+</html>

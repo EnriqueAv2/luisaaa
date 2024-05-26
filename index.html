@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">profESIME</a>
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <br>  
+  <div class="container">
+    <H1><center>Iniciar sesión</center></H1>
+      <div><center> 
+        <div>
+          <label for="exampleInputEmail1" class="form-label mt-4">Correo Institucional</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+      <div>
+        <label for="exampleInputPassword1" class="form-label mt-4">Contraseña</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" autocomplete="off">
+      </div>
+      <div>
+        <alaign="left"><a href="olvidarcontra.html">Olvidé mi contraseña</a></alaign>
+      </div>      
+      </center></div>
+      <br>
+      <div><center>
+        <a href="menu.html" style="text-decoration: none;">
+          <button type="button" class="btn btn-primary">Iniciar sesión</button>
+        </a>
+      <br>
+      <br>
+      <a href="crearcuenta.html" style="text-decoration: none;">
+        <button type="button" class="btn btn-primary">Crear cuenta</button>
+      </a>
+      </center></div>
+      <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+          event.preventDefault();
+    
+          const formData = new FormData(event.target);
+    
+          fetch('/login', {
+            method: 'POST',
+            body: JSON.stringify(Object.fromEntries(formData)),
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          })
+          .then(response => {
+            if (response.ok) {
+              window.location.href = 'menu.html';
+            } else {
+              return response.text().then(text => { throw new Error(text) });
+            }
+          })
+          .catch(error => alert(error.message));
+        });
+      </script>
+</body>
+</html>

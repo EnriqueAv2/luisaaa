@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear cuenta</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+</head>
+<body>
+  <style>
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+    }
+    #cancel-button {
+        margin-right: auto;
+    }
+    #next-button {
+        margin-left: auto;
+    }
+  </style>
+  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">profESIME</a>
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>      
+  <div><center> 
+    <div>
+      <label for="exampleInputEmail1" class="form-label mt-4">Correo Institucional</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div>
+      <label for="exampleInputEmail1" class="form-label mt-4">Correo alternativo</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div>
+      <label for="exampleInputPassword1" class="form-label mt-4">Contraseña</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" autocomplete="off">
+    </div>
+    <div>
+      <label for="exampleInputPassword1" class="form-label mt-4">Confirmar contraseña</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" autocomplete="off">
+    </div>    
+  </center></div>
+  <br>
+  <br>
+  <div class="button-container">
+    <button id="cancel-button" type="button" class="btn btn-primary" onclick="window.location.href='index.html';">Cancelar</button>
+    <button id="next-button" type="button" class="btn btn-primary" onclick="window.location.href='menu.html';">Siguiente</button>
+  </div>
+  <script>
+      document.getElementById('registerForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      fetch('/register', {
+        method: 'POST',
+        body: JSON.stringify(Object.fromEntries(formData)),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          window.location.href = 'menu.html';
+        } else {
+          return response.text().then(text => { throw new Error(text) });
+        }
+      })
+      .catch(error => alert(error.message));
+    });
+  </script>
+</body>
+</html>
